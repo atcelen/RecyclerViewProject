@@ -1,10 +1,13 @@
 package com.atacelen.recyclerview;
 
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,12 +25,14 @@ public class MenuRecyclerAdapter extends RecyclerView.Adapter<MenuRecyclerAdapte
     private ArrayList<String> foodNameList;
     private ArrayList<Integer> priceList;
     private ArrayList<Bitmap> foodImageList;
+    private ArrayList<Integer> backgroundImageList;
 
     //Constructor
-    public MenuRecyclerAdapter(ArrayList<String> foodNameList, ArrayList<Integer> priceList, ArrayList<Bitmap> foodImageList) {
+    public MenuRecyclerAdapter(ArrayList<String> foodNameList, ArrayList<Integer> priceList, ArrayList<Bitmap> foodImageList, ArrayList<Integer> backgroundImageList) {
         this.foodNameList = foodNameList;
         this.priceList = priceList;
         this.foodImageList = foodImageList;
+        this.backgroundImageList = backgroundImageList;
     }
 
     @NonNull
@@ -54,6 +59,7 @@ public class MenuRecyclerAdapter extends RecyclerView.Adapter<MenuRecyclerAdapte
         holder.foodNameText.setText(foodNameList.get(position));
         holder.priceText.setText(priceList.get(position).toString() + " CHF");
         holder.imageView.setImageBitmap(foodImageList.get(position));
+        holder.linearLayout.setBackgroundResource(backgroundImageList.get(position));
 
     }
 
@@ -70,6 +76,7 @@ public class MenuRecyclerAdapter extends RecyclerView.Adapter<MenuRecyclerAdapte
     class MenuItemHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView foodNameText, priceText;
+        LinearLayout linearLayout;
 
         public MenuItemHolder(@NonNull View itemView) {
             super(itemView);
@@ -78,6 +85,7 @@ public class MenuRecyclerAdapter extends RecyclerView.Adapter<MenuRecyclerAdapte
             imageView = itemView.findViewById(R.id.recycler_row_imageView);
             foodNameText = itemView.findViewById(R.id.recycler_row_foodNameText);
             priceText = itemView.findViewById(R.id.recycler_row_priceText);
+            linearLayout = itemView.findViewById(R.id.linearLayout);
         }
     }
 

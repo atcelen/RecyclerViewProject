@@ -2,20 +2,23 @@
 
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="290dp"
+    android:background="@drawable/ic_launcher_background"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/recycler_row_foodNameText"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:gravity="center"
+        android:paddingTop="7dp"
         android:text="Food Name"
         android:textAlignment="gravity"
-        android:paddingTop="7dp"
-        android:textSize="30dp"/>
+        android:textColor="#000000"
+        android:textSize="30sp" />
 
     <ImageView
         android:id="@+id/recycler_row_imageView"
@@ -29,5 +32,8 @@
         android:layout_height="45dp"
         android:gravity="center"
         android:text="Price"
-        android:textSize="25dp" />
+        android:textColor="#FFFFFF"
+        android:textSize="25sp" />
+
+
 </LinearLayout>
