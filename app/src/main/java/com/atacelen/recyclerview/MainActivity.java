@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> foodNameList;
     ArrayList<Integer> priceList;
     ArrayList<Bitmap> foodImageList;
-    ArrayList<Integer> backgroundImageList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         foodNameList = new ArrayList<>();
         priceList = new ArrayList<>();
         foodImageList = new ArrayList<>();
-        backgroundImageList = new ArrayList<>();
 
         foodNameList.add("Quattro Formaggi");
         foodNameList.add("Ravioli");
@@ -51,11 +49,6 @@ public class MainActivity extends AppCompatActivity {
         foodImageList.add(BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.fondue));
         foodImageList.add(BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.sushi));
 
-        backgroundImageList.add(R.drawable.italy_wallpaper);
-        backgroundImageList.add(R.drawable.italy_wallpaper1);
-        backgroundImageList.add(R.drawable.spain_wallpaper);
-        backgroundImageList.add(R.drawable.switzerland_wallpaper);
-        backgroundImageList.add(R.drawable.japan_wallpaper);
 
         // We define the recyclerView object
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
@@ -70,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         //See "MenuRecyclerAdapter.java" for details
-        MenuRecyclerAdapter menuRecyclerAdapter = new MenuRecyclerAdapter(foodNameList, priceList, foodImageList,backgroundImageList);
+        MenuRecyclerAdapter menuRecyclerAdapter = new MenuRecyclerAdapter(foodNameList, priceList, foodImageList);
         recyclerView.setAdapter(menuRecyclerAdapter);
 
         /*

@@ -25,14 +25,12 @@ public class MenuRecyclerAdapter extends RecyclerView.Adapter<MenuRecyclerAdapte
     private ArrayList<String> foodNameList;
     private ArrayList<Integer> priceList;
     private ArrayList<Bitmap> foodImageList;
-    private ArrayList<Integer> backgroundImageList;
 
     //Constructor
-    public MenuRecyclerAdapter(ArrayList<String> foodNameList, ArrayList<Integer> priceList, ArrayList<Bitmap> foodImageList, ArrayList<Integer> backgroundImageList) {
+    public MenuRecyclerAdapter(ArrayList<String> foodNameList, ArrayList<Integer> priceList, ArrayList<Bitmap> foodImageList) {
         this.foodNameList = foodNameList;
         this.priceList = priceList;
         this.foodImageList = foodImageList;
-        this.backgroundImageList = backgroundImageList;
     }
 
     @NonNull
@@ -59,7 +57,7 @@ public class MenuRecyclerAdapter extends RecyclerView.Adapter<MenuRecyclerAdapte
         holder.foodNameText.setText(foodNameList.get(position));
         holder.priceText.setText(priceList.get(position).toString() + " CHF");
         holder.imageView.setImageBitmap(foodImageList.get(position));
-        holder.linearLayout.setBackgroundResource(backgroundImageList.get(position));
+        holder.linearLayout.setBackgroundResource(R.drawable.box_ui);
 
     }
 
